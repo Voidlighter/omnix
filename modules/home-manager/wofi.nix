@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}:
-{
+{ config, pkgs, ... }: {
   home.file = {
     ".config/wofi/style.css" = {
       text = ''

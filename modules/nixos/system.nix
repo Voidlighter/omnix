@@ -1,17 +1,11 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ config, pkgs, lib, ... }:
 let
   cfg = config.omarchy;
   packages = import ../packages.nix {
     inherit pkgs lib;
     exclude_packages = cfg.exclude_packages;
   };
-in
-{
+in {
   security.rtkit.enable = true;
   services.pulseaudio.enable = false;
   services.pipewire = {
@@ -24,7 +18,8 @@ in
   # Initial login experience
   services.greetd = {
     enable = true;
-    settings.default_session.command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+    settings.default_session.command =
+      "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
   };
 
   # Install packages
@@ -35,9 +30,7 @@ in
   services.resolved.enable = true;
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
-  networking = {
-    networkmanager.enable = true;
-  };
+  networking = { networkmanager.enable = true; };
 
   fonts.packages = with pkgs; [
     noto-fonts

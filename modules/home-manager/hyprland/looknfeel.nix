@@ -1,19 +1,10 @@
-{
-  config,
-  pkgs,
-  ...
-}:
+{ config, pkgs, ... }:
 let
-  hexToRgba =
-    hex: alpha:
-    let
-    in
-    "rgba(${hex}${alpha})";
+  hexToRgba = hex: alpha: let in "rgba(${hex}${alpha})";
 
   inactiveBorder = hexToRgba config.colorScheme.palette.base09 "aa";
   activeBorder = hexToRgba config.colorScheme.palette.base0D "aa";
-in
-{
+in {
   wayland.windowManager.hyprland.settings = {
     general = {
       gaps_in = 5;
@@ -86,9 +77,7 @@ in
       force_split = 2;
     };
 
-    master = {
-      new_status = "master";
-    };
+    master = { new_status = "master"; };
 
     misc = {
       disable_hyprland_logo = true;

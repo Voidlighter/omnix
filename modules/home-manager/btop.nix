@@ -1,13 +1,8 @@
-{
-  config,
-  pkgs,
-  ...
-}:
+{ config, pkgs, ... }:
 let
   cfg = config.omarchy;
   palette = config.colorScheme.palette;
-in
-{
+in {
   home.file = {
     ".config/btop/themes/${cfg.theme}.theme" = {
       text = ''
@@ -123,8 +118,9 @@ in
       show_cpu_freq = true;
       clock_format = "%X";
       background_update = true;
-      custom_cpu_name = ";
-      disks_filter = ";
+      custom_cpu_name = ''
+        ;
+              disks_filter = '';
       mem_graphs = true;
       mem_below_net = false;
       zfs_arc_cached = true;
@@ -138,12 +134,13 @@ in
       show_io_stat = true;
       io_mode = false;
       io_graph_combined = false;
-      io_graph_speeds = ";
-      net_download = 100;
-      net_upload = 100;
-      net_auto = true;
-      net_sync = true;
-      net_iface = ";
+      io_graph_speeds = ''
+        ;
+              net_download = 100;
+              net_upload = 100;
+              net_auto = true;
+              net_sync = true;
+              net_iface = '';
       show_battery = true;
       selected_battery = "Auto";
       log_level = "WARNING";

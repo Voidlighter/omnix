@@ -1,12 +1,6 @@
-{
-  config,
-  pkgs,
-  ...
-}:
-let
-  cfg = config.omarchy;
-in
-{
+{ config, pkgs, ... }:
+let cfg = config.omarchy;
+in {
   wayland.windowManager.hyprland.settings = {
     bind = cfg.quick_app_bindings ++ [
       "SUPER, space, exec, wofi --show drun --sort-order=alphabetical"

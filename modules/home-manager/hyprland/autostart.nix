@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}:
-{
+{ config, pkgs, ... }: {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
       # "hypridle & mako & waybar & fcitx5"
@@ -16,8 +11,6 @@
       # "dropbox-cli start"  # Uncomment to run Dropbox
     ];
 
-    exec = [
-      "pkill -SIGUSR2 waybar || waybar"
-    ];
+    exec = [ "pkill -SIGUSR2 waybar || waybar" ];
   };
 }

@@ -34,7 +34,8 @@ lib: {
         };
       };
       default = { };
-      description = "Theme overrides including wallpaper path for generated themes";
+      description =
+        "Theme overrides including wallpaper path for generated themes";
     };
     primary_font = lib.mkOption {
       type = lib.types.str;
@@ -51,11 +52,13 @@ lib: {
     scale = lib.mkOption {
       type = lib.types.int;
       default = 2;
-      description = "Display scale factor (1 for 1x displays, 2 for 2x displays)";
+      description =
+        "Display scale factor (1 for 1x displays, 2 for 2x displays)";
     };
     quick_app_bindings = lib.mkOption {
       type = lib.types.listOf lib.types.str;
-      description = "A list of single keystroke key bindings to launch common apps.";
+      description =
+        "A list of single keystroke key bindings to launch common apps.";
       default = [
         "SUPER, A, exec, $webapp=https://chatgpt.com"
         "SUPER SHIFT, A, exec, $webapp=https://grok.com"
@@ -67,7 +70,7 @@ lib: {
         "SUPER SHIFT, X, exec, $webapp=https://x.com/compose/post"
 
         "SUPER, return, exec, $terminal"
-        "SUPER, F, exec, $fileManager"
+        "SUPER, E, exec, $fileManager"
         "SUPER, B, exec, $browser"
         "SUPER, M, exec, $music"
         "SUPER, N, exec, $terminal -e nvim"

@@ -1,14 +1,9 @@
-{
-  config,
-  pkgs,
-  ...
-}:
+{ config, pkgs, ... }:
 let
   cfg = config.omarchy;
   themes = import ../themes.nix;
   theme = themes.${cfg.theme};
-in
-{
+in {
   programs.vscode = {
     enable = true;
     profiles.default = {
@@ -25,12 +20,8 @@ in
 
       # // cfg.vscode_settings;
 
-      extensions =
-        with pkgs.vscode-extensions;
-        [
-          bbenoist.nix
-          vscodevim.vim
-        ]
+      extensions = with pkgs.vscode-extensions;
+        [ bbenoist.nix vscodevim.vim ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
             name = "everforest";

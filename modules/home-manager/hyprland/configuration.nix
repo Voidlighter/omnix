@@ -1,13 +1,6 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
-let
-  cfg = config.omarchy;
-in
-{
+{ config, pkgs, lib, ... }:
+let cfg = config.omarchy;
+in {
   imports = [
     ./autostart.nix
     ./bindings.nix

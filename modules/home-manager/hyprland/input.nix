@@ -1,10 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
-{
+{ config, lib, pkgs, ... }: {
   wayland.windowManager.hyprland.settings = {
     # Environment variables
     # https://wiki.hyprland.org/Configuring/Variables/#input
@@ -19,14 +13,10 @@
 
       sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
 
-      touchpad = {
-        natural_scroll = false;
-      };
+      touchpad = { natural_scroll = false; };
     };
 
     # https://wiki.hyprland.org/Configuring/Variables/#gestures
-    gestures = lib.mkDefault {
-      workspace_swipe = false;
-    };
+    gestures = lib.mkDefault { workspace_swipe = false; };
   };
 }

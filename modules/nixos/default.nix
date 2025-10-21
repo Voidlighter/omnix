@@ -1,14 +1,9 @@
 inputs:
-{
-  config,
-  pkgs,
-  ...
-}:
+{ config, pkgs, ... }:
 let
   cfg = config.omarchy;
   packages = import ../packages.nix { inherit pkgs; };
-in
-{
+in {
   imports = [
     (import ./hyprland.nix inputs)
     (import ./system.nix)

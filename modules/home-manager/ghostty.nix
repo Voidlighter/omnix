@@ -1,13 +1,8 @@
-{
-  config,
-  pkgs,
-  ...
-}:
+{ config, pkgs, ... }:
 let
   cfg = config.omarchy;
   palette = config.colorScheme.palette;
-in
-{
+in {
   programs.ghostty = {
     enable = true;
     settings = {
@@ -21,9 +16,7 @@ in
       font-size = 12;
 
       theme = "omarchy";
-      keybind = [
-        "ctrl+k=reset"
-      ];
+      keybind = [ "ctrl+k=reset" ];
     };
     themes = {
       omarchy = {
